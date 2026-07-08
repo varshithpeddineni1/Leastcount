@@ -1,0 +1,9 @@
+npx lint-staged
+
+npx secretlint --secretlintrc .secretlintrc.json "**/*"
+
+staged_conflicts=$(git diff --cached --name-only --diff-filter=ACM | xargs -r grep -lE "^(<{7}|={7}|>{7})( |$)" 2>/dev/null || true)
+if [ -n "$staged_conflicts" ]; then
+  echo "Merge conflict markers found in: $staged_conflicts" >&2
+  exit 1
+fi

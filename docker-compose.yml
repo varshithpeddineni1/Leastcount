@@ -1,0 +1,50 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: leastcount
+      POSTGRES_PASSWORD: leastcount
+      POSTGRES_DB: leastcount
+    ports:
+      - '5432:5432'
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U leastcount']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  server:
+    image: node:24-alpine
+    working_dir: /workspace
+    command: sh -c "npm install && npm run dev -w server"
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_URL: postgres://leastcount:leastcount@db:5432/leastcount
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/workspace
+    depends_on:
+      db:
+        condition: service_healthy
+
+  client:
+    image: node:24-alpine
+    working_dir: /workspace
+    command: sh -c "npm install && npm run dev -w client -- --host"
+    restart: unless-stopped
+    environment:
+      VITE_SERVER_ORIGIN: http://localhost:3000
+    ports:
+      - '5173:5173'
+    volumes:
+      - .:/workspace
+    depends_on:
+      - server
+
+volumes:
+  db-data:
