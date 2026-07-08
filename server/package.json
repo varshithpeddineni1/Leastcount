@@ -12,7 +12,7 @@
     "migrate:create": "node-pg-migrate create --migrations-dir src/db/migrations --migration-file-language js"
   },
   "dependencies": {
-    "dotenv": "^16.4.7",
+    "dotenv": "^17.4.2",
     "express": "^4.21.2",
     "node-pg-migrate": "^8.0.4",
     "pg": "^8.13.1",
