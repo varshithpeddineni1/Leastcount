@@ -42,4 +42,6 @@ if (failed) {
   process.exit(1);
 }
 
-console.log(`Checked ${files.length} migration file(s) — file names kebab-case, identifiers snake_case.`);
+console.log(
+  `Checked ${files.length} migration file(s) — file names kebab-case, identifiers snake_case.`,
+);
