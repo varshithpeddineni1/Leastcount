@@ -1,0 +1,159 @@
+/* Shared component styles. Colors come only from tokens.css custom properties (ARC-3a). */
+
+.btn {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--r-pill);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn--primary {
+  background: var(--primary);
+  color: var(--on-primary);
+  box-shadow: var(--sh-sm);
+}
+
+.btn--secondary {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn--danger {
+  background: var(--danger);
+  color: var(--on-primary);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-md);
+  padding: 1.25rem;
+}
+
+.playing-card {
+  width: 64px;
+  height: 90px;
+  border-radius: var(--r-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  box-shadow: var(--sh-card);
+  border: 1px solid var(--card-edge);
+}
+
+.playing-card--face {
+  background: var(--card-face);
+  color: var(--card-ink);
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.playing-card--face.playing-card--red {
+  color: var(--suit-red);
+}
+
+.playing-card--face.playing-card--black {
+  color: var(--suit-black);
+}
+
+.playing-card--back {
+  background: linear-gradient(135deg, var(--card-back), var(--card-back-2));
+}
+
+.playing-card--joker {
+  background: var(--joker);
+  color: var(--on-primary);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--r-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  color: var(--on-avatar);
+  background: oklch(var(--avatar-l) var(--avatar-c) var(--avatar-hue, 200));
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--r-pill);
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge--primary {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.badge--accent {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.badge--danger {
+  background: var(--danger);
+  color: var(--on-primary);
+}
+
+.badge--success {
+  background: var(--success);
+  color: var(--on-primary);
+}
+
+.badge--warn {
+  background: var(--warn);
+  color: var(--on-primary);
+}
+
+.score-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-ui);
+  color: var(--text);
+}
+
+.score-row:last-child {
+  border-bottom: none;
+}
+
+.score-row__name {
+  font-weight: 600;
+}
+
+.score-row__score {
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
