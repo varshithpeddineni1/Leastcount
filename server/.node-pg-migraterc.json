@@ -1,5 +1,0 @@
-{
-  "migrations-dir": "src/db/migrations",
-  "migration-file-language": "cjs",
-  "migrations-table": "pgmigrations"
-}
