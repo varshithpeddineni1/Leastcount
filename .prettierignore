@@ -1,0 +1,15 @@
+node_modules
+dist
+build
+coverage
+e2e/playwright-report
+e2e/test-results
+package-lock.json
+design/
+
+# Pre-existing authority docs — not reformatted as part of the scaffold;
+# their content/whitespace is the user's, not ours to rewrite cosmetically.
+rules.md
+CLAUDE.md
+AGENTS.md
+.specify/

@@ -1,0 +1,43 @@
+# dependencies
+node_modules/
+
+# env
+.env
+.env.*
+!.env.example
+
+# build output
+dist/
+build/
+
+# coverage
+coverage/
+.nyc_output/
+
+# playwright
+e2e/test-results/
+e2e/playwright-report/
+e2e/blob-report/
+e2e/.cache/
+
+# logs
+*.log
+npm-debug.log*
+
+# editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# credentials / keys
+*.pem
+*.key
+*.p12
+*.pfx
+
+# personal/local Claude Code settings — not shared with the team
+.claude/settings.local.json
+
+# claude plans (local machine paths, not repo content)
