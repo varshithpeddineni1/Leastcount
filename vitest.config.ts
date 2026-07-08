@@ -15,6 +15,7 @@ export default defineConfig({
         'e2e/**',
         'design/**',
         'scripts/**',
+        '**/db/migrations/**',
       ],
       thresholds: {
         lines: 80,
